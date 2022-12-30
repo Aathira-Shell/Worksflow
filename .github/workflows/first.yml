@@ -28,7 +28,9 @@ jobs:
         run: "Get-ChildItem Env: | Sort-Object Name"
 
   job3:
-  name: Third job
-  runs-on: windows-latest
-  steps:
-    - needs: [job1, job2]
+    name: Third job
+    needs: [job1, job2]
+    runs-on: windows-latest
+    steps:
+      - run: "Get-ChildItem Env: | Sort-Object Name"
+    
